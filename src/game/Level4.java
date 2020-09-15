@@ -16,7 +16,6 @@ import org.jbox2d.common.Vec2;
  * Level 4 of the game
  */
 public class Level4 extends GameLevel {
-    //declaring all variables, initialsing most
     private static final int NUM_CARROTS = 1;
     private SoundClip pickupClip;
     private SoundClip lifeLost;
