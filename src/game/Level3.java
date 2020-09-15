@@ -17,10 +17,9 @@ import org.jbox2d.common.Vec2;
  * Level 3 of the game
  */
 public class Level3 extends GameLevel {
-    //declaring all variables, initialsing most
+    
     private static final int NUM_CARROTS = 11;
     private static final int NUM_CARROTS2 = 2;
-    private static final int NUM_CARROTS3 = 2;
     private SoundClip pickupClip;
     private SoundClip lifeLost;
 
@@ -95,16 +94,10 @@ public class Level3 extends GameLevel {
 
             Carrot carrot = new Carrot(this);
             carrot.setPosition(new Vec2(i * 2 + 5f, -1.1f));
-
-            carrot.addCollisionListener(new Pickup(getPlayer(), game, pickupClip));
-        }
-        for (int i = 0; i < NUM_CARROTS3; i++) {
-
-            Carrot carrot = new Carrot(this);
             carrot.setPosition(new Vec2(i * 2 - 9, 6.7f));
-
             carrot.addCollisionListener(new Pickup(getPlayer(), game, pickupClip));
         }
+      
         //collion listneres all declared
         foxShape.addCollisionListener(new Intersection(getPlayer(), game, lifeLost));
         farmerShape.addCollisionListener(new Intersection(getPlayer(), game, lifeLost));
@@ -134,7 +127,7 @@ public class Level3 extends GameLevel {
     //method to check if the carrot count is equal to number of carrots put on the map. 
     @Override
     public boolean isCompleted() {
-        return getPlayer().getCarrotCount() == NUM_CARROTS + NUM_CARROTS2 + NUM_CARROTS3;
+        return getPlayer().getCarrotCount() == NUM_CARROTS + (NUM_CARROTS2*2);
     }
 
 }
