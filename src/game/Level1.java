@@ -12,10 +12,10 @@ import java.awt.Color;
  */
 public class Level1 extends GameLevel {
 
-    private static final int NUM_CARROTS = 3; // set variable to equal 3
-    private Game game; //declare variable game
-    private SoundClip pickupClip; //declare variable
-     private SoundClip powerupClip; //declare variable
+    private static final int NUM_CARROTS = 3;
+    private Game game; 
+    private SoundClip pickupClip;
+     private SoundClip powerupClip; 
 
     /**
      * Populate the world.
