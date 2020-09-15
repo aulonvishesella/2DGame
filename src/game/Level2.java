@@ -13,7 +13,7 @@ import org.jbox2d.common.Vec2;
  */
 public class Level2 extends GameLevel{
     
-    private static final int NUM_CARROTS = 3; //declaring and initialising variable
+    private static final int NUM_CARROTS = 3; 
     private SoundClip pickupClip;
     private SoundClip lifeLost;
 
