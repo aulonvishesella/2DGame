@@ -83,6 +83,6 @@ public class Level2 extends GameLevel{
     //method to check if the carrot count is equal to number of carrots put on the map.
     @Override
     public boolean isCompleted() {
-        return getPlayer().getCarrotCount() ==  NUM_CARROTS2 + NUM_CARROTS3;
+        return getPlayer().getCarrotCount() ==  NUM_CARROTS*2;
     }
 }
