@@ -6,4 +6,5 @@ An individual project to develop a fun 2D game in java. This project was assigne
 * Utilising collision evnts and listeners in order to detect if the avatar has collected a carrot (score points accordingly) or been hit by an enemy (decrease life count if they have been hit by the enemy and remove the enemy from the map)
 * Applying action events such as muting the audio when a mute button is clicked
 * Using Swing to create GUI like the main menu panel
+* Class inheritance 
 
