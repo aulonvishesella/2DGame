@@ -13,8 +13,7 @@ import org.jbox2d.common.Vec2;
  */
 public class Level2 extends GameLevel{
     
-    private static final int NUM_CARROTS2 = 3; //declaring and initialising variable
-    private static final int NUM_CARROTS3 = 3;//declaring and initialising variable
+    private static final int NUM_CARROTS = 3; //declaring and initialising variable
     private SoundClip pickupClip;
     private SoundClip lifeLost;
 
@@ -25,7 +24,7 @@ public class Level2 extends GameLevel{
     public void populate(Game game) {
         super.populate(game);
 
-        // make the ground
+        // level design for level 2
         Shape groundShape = new BoxShape(13, 0.5f);
         Body ground = new StaticBody(this, groundShape);
         ground.setPosition(new Vec2(0, -12f));
@@ -40,8 +39,6 @@ public class Level2 extends GameLevel{
         Body platform4 = new StaticBody(this, platform3Shape);
         platform4.setPosition(new Vec2(13f, -6));
         platform4.setAngleDegrees(90);
-
-        // make some platforms
         Shape platformShape = new BoxShape(4, 0.5f);
         Shape platformShape2 = new BoxShape(1f, 0.5f);
         Body platform1 = new StaticBody(this, platformShape);
@@ -58,16 +55,13 @@ public class Level2 extends GameLevel{
        
         
 
-        for (int i = 0; i < NUM_CARROTS2; i++) {
+        for (int i = 0; i < NUM_CARROTS; i++) {
             Carrot carrot = new Carrot(this);
             carrot.setPosition(new Vec2(i * 2 + 3.4f, -1.1f));
-            carrot.addCollisionListener(new Pickup(getPlayer(), game, pickupClip));
-        }
-        for (int i = 0; i < NUM_CARROTS3; i++) {
-            Carrot carrot = new Carrot(this);
             carrot.setPosition(new Vec2(i * 2 - 9, 6.7f));
             carrot.addCollisionListener(new Pickup(getPlayer(), game, pickupClip));
         }
+     
         //allows the intersection class to be activated for both fox and farmer.
            
         foxShape.addCollisionListener(new Intersection(getPlayer(), game, lifeLost));
