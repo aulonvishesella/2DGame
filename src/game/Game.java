@@ -37,13 +37,12 @@ public class Game {
      */
     private ScoreView view;
 
-    private int level;  //declaring variable level to the 
-    private int carrotCount; //declare the count of the carrot
-    private int lives; //declare the number of lives.
-    private Controller controller; //declare controller to the class Controller
-
-    private long start; //start of the time watch
-    private boolean stop; //variable stop being declared to a boolean.
+    private int level;  
+    private int carrotCount; 
+    private int lives; 
+    private Controller controller; 
+    private long start; 
+    private boolean stop; 
     private int carrotCountScreen;
 
 //    
@@ -129,16 +128,9 @@ public class Game {
         gameMusic1.loop(); //method called playMusic which loops the game music
     }
 
-    /**
-     * The player in the current level.
-     */
     public Rabbit getPlayer() {
         return world.getPlayer();
     }
-
-    /**
-     * Is the current level of the game finished?
-     */
     public boolean isCurrentLevelCompleted() {
         return world.isCompleted();
     }
@@ -171,10 +163,6 @@ public class Game {
         }
 
     }
-       /**
-      *method which prints a message when level 3 is completed
-     */
-
 
     public void nextLevelText3() {
         if (level == 3) {
@@ -183,10 +171,6 @@ public class Game {
         }
 
     }
-    /**
-      *method which prints a message when level 2 is completed
-     */
-
     public void nextLevelText2() {
         if (level == 2) {
             System.out.println("Loading next level.......");
@@ -217,9 +201,9 @@ public class Game {
         gameMusic1.play();
         start = System.currentTimeMillis();
     }
-/**
-      *method which starts a new game
-     */
+
+      //method which starts a new game
+     
     public void NewGame() {
         level = 1;
         world = new Level1();
@@ -238,10 +222,8 @@ public class Game {
         gameMusic1.play();
         start = System.currentTimeMillis();
     }
-/**
-      *method to pause the game
-     */
 
+    //pause game method
     public void pause() {
         if (stop) {
             //if stop is false, start the game, resume the game music
@@ -256,9 +238,7 @@ public class Game {
         }
     }
 
-    /**
-     * Advance to the next level of the game.
-     */
+   //method to proceed to another level
     public void goNextLevel() {
         world.stop();
         playMusic();
@@ -318,37 +298,26 @@ public class Game {
         }
 
     }
-/**
-      *to get the carrot count
-     */
 
+    //getter method to retrieve count
     public int getCountScreen() {
         return carrotCountScreen;
     }
-/**
-      *method which decrements carrot count
-     */
+
     public void decrementCount() {
         carrotCountScreen--;
     }
-    /**
-      *method gets the carrot count
-     */
-
+   
+    //retrieves carrots collected
     public int getCount() {
         return carrotCount;
     }
-/**
-      *method which increments carrot count
-     */
 
+    
     public void incrementCount() {
         carrotCount++;
     }
-/**
-      *method that decrements life
-      * call the method gameLost
-     */
+
     public void decrementHealth() {
         lives--; // decrement the lives (lives=lives-1)
         //printing line of code 'live left' next to the number of lives left
@@ -361,15 +330,13 @@ public class Game {
         return lives; //return the lives when getter method called.
 
     }
-/**
-      *method for when the game is lost
-     */
+
     public void gameLost() {
         if (lives == 0) { //if statement to see if lives are equal to zero.
             System.out.println("RAN OUT OF LIVES, GAME LOST"); // if true, print line
 
             world.stop();
-//           
+          
             gameMusic1.stop(); //stop the background music
             gameovermusic.play(); //play the gameover music
 
@@ -379,9 +346,8 @@ public class Game {
         }
 
     }
-    /**
-      *method to play the music
-     */
+    
+    //play music method
     public void introMusic() {
         try {
             introMusic = new SoundClip("data/intro.wav"); //set the gamemusic to where it holds the music
@@ -395,17 +361,14 @@ public class Game {
 
     }
 
-  /**
-      *method for countdown
-     */
+  
+    //method for a timer
     public double elapsedTime() {
         long now = System.currentTimeMillis();
         return (now - start) / 100.0;
     }
 
-    /**
-     * Run the game.
-     */
+    
     public static void main(String[] args) {
         new Game();
     }
