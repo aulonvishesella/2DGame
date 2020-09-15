@@ -1,5 +1,5 @@
 # Project Description
-An individual project to develop a fun 2D game in java. This project was assigned during my first year of my undergrad studies. 
+An individual project to develop a fun 2D game in java. This project was assigned during my first year of my undergrad studies.
 
 # What I learnt
 * Applying KeyEvents in order to allow the user to navigate the avatar based on the key they selected
