@@ -72,14 +72,12 @@ public class Level4 extends GameLevel {
         raccoonShape.setPosition(new Vec2(6.8f, 0));
          
         
-        //aray to set the number of carrot(s) on the map.
-        for (int i = 0; i < NUM_CARROTS; i++) {
+        
 
-            Carrot carrot = new Carrot(this);
-            carrot.setPosition(new Vec2(5, 1.3f));
-
-            carrot.addCollisionListener(new Pickup(getPlayer(), game, pickupClip));
-        } 
+        Carrot carrot = new Carrot(this);
+        carrot.setPosition(new Vec2(5, 1.3f));
+        carrot.addCollisionListener(new Pickup(getPlayer(), game, pickupClip));
+        
         
         //collision listeners added 
 
